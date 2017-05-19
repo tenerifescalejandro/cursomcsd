@@ -50,7 +50,7 @@
 
     $('.fa-arrow-circle-right').click(function () {
         var paginaActual = parseInt($('#pagina-actual').html());
-        if (paginaActual > 0) {
+        if (paginaActual === 2) {
             $('#flecha-izda').removeClass('oculto');
         }
         else {
