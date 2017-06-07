@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DDF709F1-C30A-4C7E-AA5F-384C73001FF9}</ProjectGuid>
+    <ProjectGuid>{C379AD86-23E5-413A-8C9D-9057514B265A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Database</RootNamespace>
@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB\Db.cs" />
     <Compile Include="Modelos\Coche.cs" />
+    <Compile Include="DB\Db.cs" />
     <Compile Include="Modelos\Marca.cs" />
     <Compile Include="Modelos\MarcasNCoches.cs" />
     <Compile Include="Modelos\TipoCombustible.cs" />

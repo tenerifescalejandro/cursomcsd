@@ -5,46 +5,64 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ApiCarRental.Controllers
+namespace ApiCarrental
 {
     public class CochesController : ApiController
     {
         // GET: api/Coches
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
         //public IEnumerable<Coche> Get()
-        public RespuestaAPI Get()
+        public RespuestaApi Get()
         {
-            RespuestaAPI resultado = new RespuestaAPI();
+            RespuestaApi resultado = new RespuestaApi();
+            List<Coche> data = new List<Coche>();
+            try
+            { 
+                Db.Conectar();
+
+                if (Db.EstaLaConexionAbierta())
+                {
+                    //trae lista de coches
+                    data = Db.DameListaCochesConProcedimientoAlmacenado();
+                    resultado.error = "";
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resultado.error = "Error";
+            }
+
+            resultado.totalElementos = data.Count;
+            resultado.data = data;
+            return resultado;
+        }
+
+        // GET: api/Coches/5
+        public RespuestaApi Get(long id)
+        {
+            RespuestaApi resultado = new RespuestaApi();
             List<Coche> data = new List<Coche>();
             try
             {
                 Db.Conectar();
                 if (Db.EstaLaConexionAbierta())
                 {
-                    data = Db.DameListaCochesConProcedimientoAlmacenado();
+                    data = Db.DameListaCochesConProcedimientoAlmacenadoPorId(id);
                     resultado.error = "";
                 }
+                Db.Desconectar();
             }
             catch (Exception ex)
             {
                 resultado.error = "Error";
             }
-            
             resultado.totalElementos = data.Count;
             resultado.data = data;
             return resultado;
-            
+
         }
 
-        // GET: api/Coches/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST: api/Coches
         public void Post([FromBody]string value)

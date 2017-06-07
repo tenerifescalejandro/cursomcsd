@@ -69,7 +69,7 @@ namespace Database
 
         public static void Desconectar()
         {
-            if (conexion !=null)
+            if (conexion != null)
             {
                 if (conexion.State != ConnectionState.Closed)
                 {
@@ -95,9 +95,9 @@ namespace Database
                 usuarios.Add(new Usuario()
                 {
                     hiddenId = int.Parse(reader["hiddenId"].ToString()),
-                    id = reader["id"].ToString(),
+                    Id = reader["id"].ToString(),
                     email = reader["email"].ToString(),
-                    password= reader["password"].ToString(),
+                    password = reader["password"].ToString(),
                     firstName = reader["firstName"].ToString(),
                     lastName = reader["lastName"].ToString(),
                     photoUrl = reader["photoUrl"].ToString(),
@@ -163,8 +163,8 @@ namespace Database
                 coche.marca.id = (long)reader["idMarca"];
                 coche.marca.denominacion = reader["denominacionMarca"].ToString();
                 coche.tipoCombustible = new TipoCombustible();
-                coche.tipoCombustible.id  = (long)reader["idTipoCombustible"];
-                coche.tipoCombustible.denominacion = reader["denominacionTipoCombustible"].ToString();
+                coche.tipoCombustible.id = (long)reader["idTipoCombustible"];
+                coche.tipoCombustible.denominacion = reader["denominacionTiposCombustible"].ToString();
                 // AÑADO EL COCHE A LA LISTA DE RESULTADOS
                 resultados.Add(coche);
 
@@ -285,11 +285,11 @@ namespace Database
         {
             // PREPARO LA CONSULTA SQL PARA INSERTAR AL NUEVO USUARIO
             string consultaSQL = @"UPDATE Users ";
-            consultaSQL += "   SET password = '" + usuario.password +"'";
-            consultaSQL += "      , firstName = '" + usuario.firstName +"'";
-            consultaSQL += "      , lastName = '" + usuario.lastName +"'";
-            consultaSQL += "      , photoUrl = '" + usuario.photoUrl +"'";
-            consultaSQL += "      , searchPreferences = '" + usuario.searchPreferences +"'";
+            consultaSQL += "   SET password = '" + usuario.password + "'";
+            consultaSQL += "      , firstName = '" + usuario.firstName + "'";
+            consultaSQL += "      , lastName = '" + usuario.lastName + "'";
+            consultaSQL += "      , photoUrl = '" + usuario.photoUrl + "'";
+            consultaSQL += "      , searchPreferences = '" + usuario.searchPreferences + "'";
             consultaSQL += "      , status = " + (usuario.status ? "1" : "0");
             consultaSQL += "      , deleted = " + (usuario.deleted ? "1" : "0");
             consultaSQL += "      , isAdmin = " + (usuario.isAdmin ? "1" : "0");

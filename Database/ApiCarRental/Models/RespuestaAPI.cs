@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ApiCarRental
+namespace ApiCarrental
 {
-    public class RespuestaAPI
+    public class RespuestaApi 
     {
+        internal List<Marca> dataMarcas;
+
+        //Creando propiedades
         public int totalElementos { get; set; }
 
         public string error { get; set; }

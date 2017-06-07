@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiCarRental
+namespace ApiCarrental
 {
     public class Usuario
     {
+        //añadiendo propiedades: escribir prop tab tab
+
         public int hiddenId { get; set; }
-        public string id { get; set; }
+        public string Id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string firstName { get; set; }
@@ -19,5 +21,7 @@ namespace ApiCarRental
         public bool status { get; set; }
         public bool deleted { get; set; }
         public bool isAdmin { get; set; }
+
+
     }
 }

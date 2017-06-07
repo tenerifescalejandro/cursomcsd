@@ -12,7 +12,7 @@ namespace Database
         public string matricula { get; set; }
         public string color { get; set; }
         public decimal cilindrada { get; set; }
-        public int nPlazas { get; set; }
+        public short nPlazas { get; set; }
         public DateTime fechaMatriculacion { get; set; }
         public Marca marca { get; set; }
         public TipoCombustible tipoCombustible { get; set; }

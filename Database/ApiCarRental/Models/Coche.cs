@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiCarRental
+namespace ApiCarrental
 {
     public class Coche
     {
@@ -12,7 +12,7 @@ namespace ApiCarRental
         public string matricula { get; set; }
         public string color { get; set; }
         public decimal cilindrada { get; set; }
-        public int nPlazas { get; set; }
+        public short nPlazas { get; set; }
         public DateTime fechaMatriculacion { get; set; }
         public Marca marca { get; set; }
         public TipoCombustible tipoCombustible { get; set; }
